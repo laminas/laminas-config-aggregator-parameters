@@ -1,0 +1,50 @@
+{
+    "name": "zendframework/zend-config-aggregator-parameters",
+    "description": "Parameter extension for zendframework/zend-config-aggregator to use parameters within your configuration",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Maximilian Bösing",
+            "email": "max@boesing.email"
+        }
+    ],
+    "require": {
+        "php": "^5.6 || 7.0",
+        "symfony/dependency-injection": "^3.0 || ^4.0",
+        "zendframework/zend-config-aggregator": "^1.1"
+    },
+    "require-dev": {
+        "malukenho/docheader": "^0.1.7",
+        "phpunit/phpunit": "5.7.21 || 6.3",
+        "zendframework/zend-coding-standard": "~1.0.0",
+        "zendframework/zend-config": "^3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zend\\ConfigAggregatorParameters\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ZendTest\\ConfigAggregatorParameters\\": "test/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    },
+    "scripts": {
+        "check": [
+            "@cs-check",
+            "@test"
+        ],
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf",
+        "test": "phpunit --colors=always",
+        "test-coverage": "phpunit --colors=always --coverage-clover clover.xml"
+    }
+}

@@ -1,0 +1,8 @@
+site_name: zend-config-aggregator-parameters
+docs_dir: docs/book
+site_dir: docs/html
+pages:
+    - index.md
+site_description: 'Parameter extension for the zendframework/zend-config-aggregator package to use parameters within your configuration.'
+repo_url: 'https://github.com/zendframework/zend-config-aggregator-parameters'
+copyright: 'Copyright (c) 2016-2018 <a href="http://www.zend.com/">Zend Technologies USA Inc.</a>'
