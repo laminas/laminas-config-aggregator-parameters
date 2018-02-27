@@ -42,6 +42,18 @@ array(3) {
   string(5) "%foo%"
   'recursive_parameter_usage' =>
   string(3) "qoo"
+  'parameters' =>
+  array(3) {
+    'foo' => 
+     string(3) "bar"
+    'bar' =>
+    array(1) {
+      'baz' =>
+      string(3) "qoo"
+    }
+    'bar.baz' =>
+    string(3) "qoo"
+  }
 }
 ```
 

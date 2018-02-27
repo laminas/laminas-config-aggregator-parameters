@@ -17,7 +17,7 @@ class ParameterPosthandlerTest extends TestCase
         $processor = new ParameterPostprocessor($parameters);
         $processed = $processor($configuration);
 
-        $this->assertSame($expected, $processed);
+        $this->assertArraySubset($expected, $processed);
     }
 
     public function testCanDetectMissingParameter()

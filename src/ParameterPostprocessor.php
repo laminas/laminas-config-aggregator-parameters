@@ -42,7 +42,7 @@ class ParameterPostprocessor
             throw ParameterNotFoundException::fromMissingParameter($exception->getKey());
         }
 
-        $config['parameters'] = $parameters;
+        $config['parameters'] = $parameters->all();
 
         return $config;
     }
