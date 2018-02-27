@@ -1,9 +1,8 @@
 <?php
 /**
  * @see       https://github.com/zendframework/zend-config-aggregator-parameters for the canonical source repository
- * @copyright Copyright (c) %regexp:(20\d{2}-)?20\d{2}% Zend Technologies USA Inc. (http://www.zend.com)
- * @license   https://github.com/zendframework/zend-config-aggregator-parameters/blob/master/LICENSE.md
- *            New BSD License
+ * @copyright Copyright (c) 2018 Zend Technologies USA Inc. (https://www.zend.com)
+ * @license   https://github.com/zendframework/zend-config-aggregator-parameters/blob/master/LICENSE.md New BSD License
  */
 
 namespace Zend\ConfigAggregatorParameters;
@@ -26,10 +25,7 @@ class ParameterPostprocessor
         $this->parameters = new ParameterBag($parameters);
     }
 
-    /**
-     * @return array
-     */
-    public function __invoke(array $config)
+    public function __invoke(array $config): array
     {
         $parameters = $this->parameters;
 
@@ -46,15 +42,12 @@ class ParameterPostprocessor
             throw ParameterNotFoundException::fromMissingParameter($exception->getKey());
         }
 
+        $config['parameters'] = $parameters;
+
         return $config;
     }
 
-    /**
-     * @param string $prefix
-     *
-     * @return array
-     */
-    private function convertValues(array $values, $prefix = '')
+    private function convertValues(array $values, string $prefix = ''): array
     {
         $convertedValues = [];
         foreach ($values as $key => $value) {
