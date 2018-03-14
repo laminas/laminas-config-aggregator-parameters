@@ -39,7 +39,7 @@ class ParameterPostprocessor
                 $value = $parameters->unescapeValue($parameters->resolveValue($value));
             });
         } catch (\Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException $exception) {
-            throw ParameterNotFoundException::fromMissingParameter($exception->getKey());
+            throw new ParameterNotFoundException($exception->getKey(), $exception->getMessage());
         }
 
         $config['parameters'] = $parameters->all();

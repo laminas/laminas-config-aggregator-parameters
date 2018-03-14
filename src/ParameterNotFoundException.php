@@ -11,12 +11,21 @@ class ParameterNotFoundException extends \InvalidArgumentException
 {
 
     /**
-     * @param string $parameter
-     *
-     * @return self
+     * @var string
      */
-    public static function fromMissingParameter($parameter): self
+    private $key;
+
+    public function __construct(string $key, string $message)
     {
-        return new self(sprintf('Missing parameter %s within your parameter configuration.', $parameter));
+        $this->key = $key;
+        parent::__construct($message);
+    }
+
+    /**
+     * @return string
+     */
+    public function getKey(): string
+    {
+        return $this->key;
     }
 }
