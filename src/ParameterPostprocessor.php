@@ -5,9 +5,12 @@
  * @license   https://github.com/zendframework/zend-config-aggregator-parameters/blob/master/LICENSE.md New BSD License
  */
 
+declare(strict_types=1);
+
 namespace Zend\ConfigAggregatorParameters;
 
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
+use Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException as SymfonyParameterNotFoundException;
 
 class ParameterPostprocessor
 {
@@ -25,7 +28,7 @@ class ParameterPostprocessor
         $this->parameters = new ParameterBag($parameters);
     }
 
-    public function __invoke(array $config): array
+    public function __invoke(array $config) : array
     {
         $parameters = $this->parameters;
 
@@ -38,8 +41,8 @@ class ParameterPostprocessor
             array_walk_recursive($config, function (&$value) use ($parameters) {
                 $value = $parameters->unescapeValue($parameters->resolveValue($value));
             });
-        } catch (\Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException $exception) {
-            throw new ParameterNotFoundException($exception->getKey(), $exception->getMessage());
+        } catch (SymfonyParameterNotFoundException $exception) {
+            throw ParameterNotFoundException::fromException($exception);
         }
 
         $config['parameters'] = $parameters->all();
@@ -47,7 +50,7 @@ class ParameterPostprocessor
         return $config;
     }
 
-    private function convertValues(array $values, string $prefix = ''): array
+    private function convertValues(array $values, string $prefix = '') : array
     {
         $convertedValues = [];
         foreach ($values as $key => $value) {
