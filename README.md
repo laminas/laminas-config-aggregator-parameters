@@ -10,7 +10,7 @@ Provides an extension to the `zendframework/zend-config-aggregator` to allow par
 ```php
 use Zend\ConfigAggregator\ArrayProvider;
 use Zend\ConfigAggregator\ConfigAggregator;
-use Zend\ConfigAggregatorParameters\ParameterPostprocessor;
+use Zend\ConfigAggregatorParameters\ParameterPostProcessor;
 
 $aggregator = new ConfigAggregator(
     [
@@ -22,7 +22,7 @@ $aggregator = new ConfigAggregator(
     ],
     null,
     [
-        new ParameterPostprocessor([
+        new ParameterPostProcessor([
             'foo' => 'bar',
             'bar' => [
                 'baz' => 'qoo',
