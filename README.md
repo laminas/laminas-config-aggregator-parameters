@@ -12,24 +12,26 @@ use Zend\ConfigAggregator\ArrayProvider;
 use Zend\ConfigAggregator\ConfigAggregator;
 use Zend\ConfigAggregatorParameters\ParameterPostprocessor;
 
-$aggregator = new ConfigAggregator([
-
-    new ArrayProvider([
-        'parameter_usage' => '%foo%',
-        'parameter_name' => '%%foo%%',
-        'recursive_parameter_usage' => '%bar.baz%',
-    ]),
-], null, [
-    new ParameterPostprocessor((new ArrayProvider([
-        'foo' => 'bar',
-        'bar' => [
-            'baz' => 'qoo',
-        ],
-    ]))()),
-]);
+$aggregator = new ConfigAggregator(
+    [
+        new ArrayProvider([
+            'parameter_usage' => '%foo%',
+            'parameter_name' => '%%foo%%',
+            'recursive_parameter_usage' => '%bar.baz%',
+        ]),
+    ],
+    null,
+    [
+        new ParameterPostprocessor([
+            'foo' => 'bar',
+            'bar' => [
+                'baz' => 'qoo',
+            ],
+        ]),
+    ]
+);
 
 var_dump($aggregator->getMergedConfig());
-
 ```
 
 Result:
