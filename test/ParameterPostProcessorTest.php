@@ -15,29 +15,10 @@ use Zend\ConfigAggregatorParameters\ParameterPostProcessor;
 
 class ParameterPostProcessorTest extends TestCase
 {
-    /**
-     * @dataProvider parameterProvider
-     */
-    public function testCanApplyParameters(array $parameters, array $configuration, array $expected)
-    {
-        $processor = new ParameterPostProcessor($parameters);
-        $processed = $processor($configuration);
-
-        $this->assertArraySubset($expected, $processed);
-    }
-
-    public function testCanDetectMissingParameter()
-    {
-        $this->expectException(ParameterNotFoundException::class);
-        $processor = new ParameterPostProcessor([]);
-        $processor(['foo' => '%foo%']);
-    }
-
     public function parameterProvider()
     {
         return [
-            [
-                // Root scope parameter
+            'root-scoped-parameter' => [
                 [
                     'foo' => 'bar',
                 ],
@@ -54,8 +35,7 @@ class ParameterPostProcessorTest extends TestCase
                     ],
                 ],
             ],
-            [
-                // Multi level parameter
+            'multi-level-parameter' => [
                 [
                     'foo' => [
                         'bar' => 'baz',
@@ -75,5 +55,23 @@ class ParameterPostProcessorTest extends TestCase
                 ],
             ],
         ];
+    }
+
+    /**
+     * @dataProvider parameterProvider
+     */
+    public function testCanApplyParameters(array $parameters, array $configuration, array $expected)
+    {
+        $processor = new ParameterPostProcessor($parameters);
+        $processed = $processor($configuration);
+
+        $this->assertArraySubset($expected, $processed);
+    }
+
+    public function testCanDetectMissingParameter()
+    {
+        $processor = new ParameterPostProcessor([]);
+        $this->expectException(ParameterNotFoundException::class);
+        $processor(['foo' => '%foo%']);
     }
 }
