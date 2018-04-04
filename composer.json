@@ -1,6 +1,6 @@
 {
     "name": "zendframework/zend-config-aggregator-parameters",
-    "description": "Parameter extension for zendframework/zend-config-aggregator to use parameters within your configuration",
+    "description": "PostProcessor extension for zendframework/zend-config-aggregator to allow usage of templated parameters within your configuration",
     "license": "BSD-3-Clause",
     "authors": [
         {
@@ -10,13 +10,12 @@
     ],
     "require": {
         "php": "^7.1",
-       "malukenho/docheader": "^0.1.7",
         "symfony/dependency-injection": "^3.0 || ^4.0",
         "zendframework/zend-config-aggregator": "^1.1",
         "zendframework/zend-stdlib": "^3.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "5.7.21 || 6.3",
+        "phpunit/phpunit": "^7.0.3",
         "zendframework/zend-coding-standard": "~1.0.0",
         "zendframework/zend-config": "^3.1"
     },
@@ -35,7 +34,8 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.0.x-dev"
+            "dev-master": "1.0.x-dev",
+            "dev-develop": "1.1.x-dev"
         }
     },
     "scripts": {
