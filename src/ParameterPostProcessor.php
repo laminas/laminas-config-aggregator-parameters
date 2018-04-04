@@ -12,9 +12,8 @@ namespace Zend\ConfigAggregatorParameters;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 use Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException as SymfonyParameterNotFoundException;
 
-class ParameterPostprocessor
+class ParameterPostProcessor
 {
-
     /**
      * @var ParameterBag
      */
