@@ -11,7 +11,6 @@ namespace Zend\ConfigAggregatorParameters;
 
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 use Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException as SymfonyParameterNotFoundException;
-use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
 class ParameterPostProcessor
 {
@@ -63,16 +62,15 @@ class ParameterPostProcessor
         return $convertedValues;
     }
 
-    private function getResolvedParameters(): ParameterBagInterface
+    private function getResolvedParameters() : ParameterBag
     {
         $resolved = $this->resolveNestedParameters($this->parameters);
         $bag = new ParameterBag($resolved);
         try {
             $bag->resolve();
+            return $bag;
         } catch (SymfonyParameterNotFoundException $exception) {
             throw ParameterNotFoundException::fromException($exception);
         }
-
-        return $bag;
     }
 }
