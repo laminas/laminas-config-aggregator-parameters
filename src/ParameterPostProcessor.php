@@ -29,9 +29,10 @@ class ParameterPostProcessor
 
     public function __invoke(array $config) : array
     {
-        $parameters = $this->getResolvedParameters();
 
         try {
+            $parameters = $this->getResolvedParameters();
+
             array_walk_recursive($config, function (&$value) use ($parameters) {
                 $value = $parameters->unescapeValue($parameters->resolveValue($value));
             });
@@ -66,11 +67,8 @@ class ParameterPostProcessor
     {
         $resolved = $this->resolveNestedParameters($this->parameters);
         $bag = new ParameterBag($resolved);
-        try {
-            $bag->resolve();
-            return $bag;
-        } catch (SymfonyParameterNotFoundException $exception) {
-            throw ParameterNotFoundException::fromException($exception);
-        }
+
+        $bag->resolve();
+        return $bag;
     }
 }
