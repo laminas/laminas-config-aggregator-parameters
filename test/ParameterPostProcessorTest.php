@@ -74,4 +74,45 @@ class ParameterPostProcessorTest extends TestCase
         $this->expectException(ParameterNotFoundException::class);
         $processor(['foo' => '%foo%']);
     }
+
+    public function testResolvesParameterizedParameters()
+    {
+        $processor = new ParameterPostProcessor([
+            'foo' => 'bar',
+            'bar' => 'baz',
+            'baz' => '%foo%',
+            'nested' => [
+                'foo' => '%bar%',
+                'bar' => '%nested.foo%',
+            ],
+        ]);
+
+        $processed = $processor(['foo' => '%nested.bar%']);
+
+        $this->assertArraySubset([
+            'foo' => 'baz',
+            'parameters' => [
+                'nested' => [
+                    'bar' => 'baz',
+                ],
+            ],
+        ], $processed);
+    }
+
+    public function testResolvesParameterizedParametersInReversedOrder()
+    {
+        $processor = new ParameterPostProcessor([
+            'foo' => '%bar%',
+            'bar' => '%baz%',
+            'baz' => 'qux',
+        ]);
+
+        $processed = $processor([]);
+
+        $this->assertArraySubset([
+            'parameters' => [
+                'foo' => 'qux',
+            ],
+        ], $processed);
+    }
 }

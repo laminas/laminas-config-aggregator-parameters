@@ -11,11 +11,12 @@ namespace Zend\ConfigAggregatorParameters;
 
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 use Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException as SymfonyParameterNotFoundException;
+use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
 class ParameterPostProcessor
 {
     /**
-     * @var ParameterBag
+     * @var array
      */
     private $parameters;
 
@@ -24,17 +25,12 @@ class ParameterPostProcessor
      */
     public function __construct(array $parameters)
     {
-        $this->parameters = new ParameterBag($parameters);
+        $this->parameters = $parameters;
     }
 
     public function __invoke(array $config) : array
     {
-        $parameters = $this->parameters;
-
-        // First, convert values to needed parameters
-        $convertedParameters = $this->convertValues($parameters->all());
-        $parameters->clear();
-        $parameters->add($convertedParameters);
+        $parameters = $this->getResolvedParameters();
 
         try {
             array_walk_recursive($config, function (&$value) use ($parameters) {
@@ -49,7 +45,7 @@ class ParameterPostProcessor
         return $config;
     }
 
-    private function convertValues(array $values, string $prefix = '') : array
+    private function resolveNestedParameters(array $values, string $prefix = '') : array
     {
         $convertedValues = [];
         foreach ($values as $key => $value) {
@@ -60,10 +56,23 @@ class ParameterPostProcessor
 
             $convertedValues[$prefix . $key] = $value;
             if (is_array($value)) {
-                $convertedValues += $this->convertValues($value, $prefix . $key . '.');
+                $convertedValues += $this->resolveNestedParameters($value, $prefix . $key . '.');
             }
         }
 
         return $convertedValues;
+    }
+
+    private function getResolvedParameters(): ParameterBagInterface
+    {
+        $resolved = $this->resolveNestedParameters($this->parameters);
+        $bag = new ParameterBag($resolved);
+        try {
+            $bag->resolve();
+        } catch (SymfonyParameterNotFoundException $exception) {
+            throw ParameterNotFoundException::fromException($exception);
+        }
+
+        return $bag;
     }
 }
