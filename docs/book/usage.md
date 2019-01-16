@@ -15,7 +15,7 @@ Parameters may be defined as nested associative arrays as well; in such cases, a
 `.` character references an additional layer of hierarchy to dereference:
 `%foo.bar%` refers to the paramter found at `'foo' => [ 'bar' => 'value' ]`.
 
-You can use parameters which referencing other parameters as well.
+You can use parameters which reference other parameters as well.
 
 If you wish to use a literal `%name%` within your configuration, you **must**
 double-escape the percentage signs: `%%name%%`. Failure to do so will result in
