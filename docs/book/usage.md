@@ -63,7 +63,7 @@ array(5) {
   'recursive_parameter_usage' =>
   string(3) "qoo"
   'parameterized_parameter_usage' =>
-  string(3) "qoo"
+  string(3) "bar"
   'parameters' =>
   array(4) {
     'foo' =>
@@ -73,7 +73,7 @@ array(5) {
       'baz' =>
       string(3) "qoo"
       'quux' =>
-      string(3) "qoo"
+      string(3) "bar"
     }
     'bar.baz' =>
     string(3) "qoo"
