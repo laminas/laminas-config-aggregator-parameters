@@ -10,7 +10,7 @@ All notable changes to this project will be documented in this file, in reverse 
 
 ### Changed
 
-- Nothing.
+- [#1](https://github.com/zendframework/zend-config-aggregator-parameters/pull/1) adds the ability to define parameters that reference other parameters.
 
 ### Deprecated
 
