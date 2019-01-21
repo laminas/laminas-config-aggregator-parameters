@@ -2,11 +2,11 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 1.1.0 - TBD
+## 1.1.0 - 2019-01-21
 
 ### Added
 
-- Nothing.
+- [#2](https://github.com/zendframework/zend-config-aggregator-parameters/pull/2) adds support for PHP 7.3.
 
 ### Changed
 
