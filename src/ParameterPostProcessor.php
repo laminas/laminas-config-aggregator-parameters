@@ -15,7 +15,7 @@ use Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException a
 class ParameterPostProcessor
 {
     /**
-     * @var ParameterBag
+     * @var array
      */
     private $parameters;
 
@@ -24,19 +24,15 @@ class ParameterPostProcessor
      */
     public function __construct(array $parameters)
     {
-        $this->parameters = new ParameterBag($parameters);
+        $this->parameters = $parameters;
     }
 
     public function __invoke(array $config) : array
     {
-        $parameters = $this->parameters;
-
-        // First, convert values to needed parameters
-        $convertedParameters = $this->convertValues($parameters->all());
-        $parameters->clear();
-        $parameters->add($convertedParameters);
 
         try {
+            $parameters = $this->getResolvedParameters();
+
             array_walk_recursive($config, function (&$value) use ($parameters) {
                 $value = $parameters->unescapeValue($parameters->resolveValue($value));
             });
@@ -49,7 +45,7 @@ class ParameterPostProcessor
         return $config;
     }
 
-    private function convertValues(array $values, string $prefix = '') : array
+    private function resolveNestedParameters(array $values, string $prefix = '') : array
     {
         $convertedValues = [];
         foreach ($values as $key => $value) {
@@ -60,10 +56,19 @@ class ParameterPostProcessor
 
             $convertedValues[$prefix . $key] = $value;
             if (is_array($value)) {
-                $convertedValues += $this->convertValues($value, $prefix . $key . '.');
+                $convertedValues += $this->resolveNestedParameters($value, $prefix . $key . '.');
             }
         }
 
         return $convertedValues;
+    }
+
+    private function getResolvedParameters() : ParameterBag
+    {
+        $resolved = $this->resolveNestedParameters($this->parameters);
+        $bag = new ParameterBag($resolved);
+
+        $bag->resolve();
+        return $bag;
     }
 }

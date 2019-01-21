@@ -15,6 +15,8 @@ Parameters may be defined as nested associative arrays as well; in such cases, a
 `.` character references an additional layer of hierarchy to dereference:
 `%foo.bar%` refers to the paramter found at `'foo' => [ 'bar' => 'value' ]`.
 
+You can use parameters which reference other parameters as well.
+
 If you wish to use a literal `%name%` within your configuration, you **must**
 double-escape the percentage signs: `%%name%%`. Failure to do so will result in
 an exception when post-processing the configuration.
@@ -32,6 +34,7 @@ $aggregator = new ConfigAggregator(
             'parameter_usage' => '%foo%',
             'parameter_name' => '%%foo%%',
             'recursive_parameter_usage' => '%bar.baz%',
+            'parameterized_parameter_usage' => '%bar.quux%',
         ]),
     ],
     null,
@@ -40,6 +43,7 @@ $aggregator = new ConfigAggregator(
             'foo' => 'bar',
             'bar' => [
                 'baz' => 'qoo',
+                'quux' => '%foo%', 
             ],
         ]),
     ]
@@ -51,24 +55,30 @@ var_dump($aggregator->getMergedConfig());
 The result of the above will be:
 
 ```php
-array(3) {
+array(5) {
   'parameter_usage' =>
   string(3) "bar"
   'parameter_name' =>
   string(5) "%foo%"
   'recursive_parameter_usage' =>
   string(3) "qoo"
+  'parameterized_parameter_usage' =>
+  string(3) "bar"
   'parameters' =>
-  array(3) {
-    'foo' => 
-     string(3) "bar"
+  array(4) {
+    'foo' =>
+    string(3) "bar"
     'bar' =>
-    array(1) {
+    array(2) {
       'baz' =>
       string(3) "qoo"
+      'quux' =>
+      string(3) "bar"
     }
     'bar.baz' =>
     string(3) "qoo"
+    'bar.quux' =>
+    string(3) "bar"
   }
 }
 ```

@@ -18,6 +18,7 @@ $aggregator = new ConfigAggregator(
             'parameter_usage' => '%foo%',
             'parameter_name' => '%%foo%%',
             'recursive_parameter_usage' => '%bar.baz%',
+            'parameterized_parameter_usage' => '%bar.quux%',
         ]),
     ],
     null,
@@ -26,6 +27,7 @@ $aggregator = new ConfigAggregator(
             'foo' => 'bar',
             'bar' => [
                 'baz' => 'qoo',
+                'quux' => '%foo%', 
             ],
         ]),
     ]
@@ -37,24 +39,30 @@ var_dump($aggregator->getMergedConfig());
 Result:
 
 ```php
-array(3) {
+array(5) {
   'parameter_usage' =>
   string(3) "bar"
   'parameter_name' =>
   string(5) "%foo%"
   'recursive_parameter_usage' =>
   string(3) "qoo"
+  'parameterized_parameter_usage' =>
+  string(3) "bar"
   'parameters' =>
-  array(3) {
-    'foo' => 
-     string(3) "bar"
+  array(4) {
+    'foo' =>
+    string(3) "bar"
     'bar' =>
-    array(1) {
+    array(2) {
       'baz' =>
       string(3) "qoo"
+      'quux' =>
+      string(3) "bar"
     }
     'bar.baz' =>
     string(3) "qoo"
+    'bar.quux' =>
+    string(3) "bar"
   }
 }
 ```
