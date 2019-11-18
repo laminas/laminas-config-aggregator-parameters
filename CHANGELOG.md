@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 1.1.1 - TBD
+## 1.1.1 - 2019-11-18
 
 ### Added
 
@@ -10,7 +10,7 @@ All notable changes to this project will be documented in this file, in reverse 
 
 ### Changed
 
-- Nothing.
+- [#3](https://github.com/zendframework/zend-config-aggregator-parameters/pull/3) bumps the mimimum supported v4 release of symfony/dependency-injection to 4.1.12 to ensure consumers are using a version applying critical security fixes. symfony/dependency-injectionv3 users are encouraged to upgrade to v4 releases.
 
 ### Deprecated
 
