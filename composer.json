@@ -10,7 +10,7 @@
     ],
     "require": {
         "php": "^7.1",
-        "symfony/dependency-injection": "^3.0 || ^4.1.12",
+        "symfony/dependency-injection": "^3.0 || ^4.1.12 || ^5.0",
         "zendframework/zend-config-aggregator": "^1.1",
         "zendframework/zend-stdlib": "^3.1"
     },
