@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file, in reverse 
 
 ### Added
 
-- Nothing.
+- [#5](https://github.com/zendframework/zend-config-aggregator-parameters/pull/5) adds compatibility with symfony/dependency-injection `^5.0`.
 
 ### Changed
 
