@@ -2,33 +2,11 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 1.2.0 - TBD
+## 1.2.0 - 2019-11-22
 
 ### Added
 
 - [#5](https://github.com/zendframework/zend-config-aggregator-parameters/pull/5) adds compatibility with symfony/dependency-injection `^5.0`.
-
-### Changed
-
-- Nothing.
-
-### Deprecated
-
-- Nothing.
-
-### Removed
-
-- Nothing.
-
-### Fixed
-
-- Nothing.
-
-## 1.1.2 - TBD
-
-### Added
-
-- Nothing.
 
 ### Changed
 
