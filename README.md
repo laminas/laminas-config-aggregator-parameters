@@ -1,16 +1,16 @@
-# zend-config-aggregator-parameters
+# laminas-config-aggregator-parameters
 
-[![Build Status](https://secure.travis-ci.org/zendframework/zend-config-aggregator-parameters.svg?branch=master)](https://secure.travis-ci.org/zendframework/zend-config-aggregator-parameters)
-[![Coverage Status](https://coveralls.io/repos/github/zendframework/zend-config-aggregator-parameters/badge.svg?branch=master)](https://coveralls.io/github/zendframework/zend-config-aggregator-parameters?branch=master)
+[![Build Status](https://travis-ci.org/laminas/laminas-config-aggregator-parameters.svg?branch=master)](https://travis-ci.org/laminas/laminas-config-aggregator-parameters)
+[![Coverage Status](https://coveralls.io/repos/github/laminas/laminas-config-aggregator-parameters/badge.svg?branch=master)](https://coveralls.io/github/laminas/laminas-config-aggregator-parameters?branch=master)
 
-Provides an extension to the `zendframework/zend-config-aggregator` to allow parameters within your configuration.
+Provides an extension to the `laminas/laminas-config-aggregator` to allow parameters within your configuration.
  
 ## Usage
 
 ```php
-use Zend\ConfigAggregator\ArrayProvider;
-use Zend\ConfigAggregator\ConfigAggregator;
-use Zend\ConfigAggregatorParameters\ParameterPostProcessor;
+use Laminas\ConfigAggregator\ArrayProvider;
+use Laminas\ConfigAggregator\ConfigAggregator;
+use Laminas\ConfigAggregatorParameters\ParameterPostProcessor;
 
 $aggregator = new ConfigAggregator(
     [
@@ -67,9 +67,9 @@ array(5) {
 }
 ```
 
-For more details, please refer to the [documentation](https://docs.zendframework.com/zend-config-aggregator-parameters/).
+For more details, please refer to the [documentation](https://docs.laminas.dev/laminas-config-aggregator-parameters/).
 
 -----
 
-- File issues at https://github.com/zendframework/zend-config-aggregator-parameters/issues
-- Documentation is at https://docs.zendframework.com/zend-config-aggregator-parameters/
+- File issues at https://github.com/laminas/laminas-config-aggregator-parameters/issues
+- Documentation is at https://docs.laminas.dev/laminas-config-aggregator-parameters/
