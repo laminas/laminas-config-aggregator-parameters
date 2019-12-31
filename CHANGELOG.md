@@ -28,7 +28,7 @@ All notable changes to this project will be documented in this file, in reverse 
 
 ### Added
 
-- [#5](https://github.com/zendframework/zend-config-aggregator-parameters/pull/5) adds compatibility with symfony/dependency-injection `^5.0`.
+- [zendframework/zend-config-aggregator-parameters#5](https://github.com/zendframework/zend-config-aggregator-parameters/pull/5) adds compatibility with symfony/dependency-injection `^5.0`.
 
 ### Changed
 
@@ -54,7 +54,7 @@ All notable changes to this project will be documented in this file, in reverse 
 
 ### Changed
 
-- [#3](https://github.com/zendframework/zend-config-aggregator-parameters/pull/3) bumps the mimimum supported v4 release of symfony/dependency-injection to 4.1.12 to ensure consumers are using a version applying critical security fixes. symfony/dependency-injection v3 users are encouraged to upgrade to v4 releases.
+- [zendframework/zend-config-aggregator-parameters#3](https://github.com/zendframework/zend-config-aggregator-parameters/pull/3) bumps the mimimum supported v4 release of symfony/dependency-injection to 4.1.12 to ensure consumers are using a version applying critical security fixes. symfony/dependency-injection v3 users are encouraged to upgrade to v4 releases.
 
 ### Deprecated
 
@@ -72,11 +72,11 @@ All notable changes to this project will be documented in this file, in reverse 
 
 ### Added
 
-- [#2](https://github.com/zendframework/zend-config-aggregator-parameters/pull/2) adds support for PHP 7.3.
+- [zendframework/zend-config-aggregator-parameters#2](https://github.com/zendframework/zend-config-aggregator-parameters/pull/2) adds support for PHP 7.3.
 
 ### Changed
 
-- [#1](https://github.com/zendframework/zend-config-aggregator-parameters/pull/1) adds the ability to define parameters that reference other parameters.
+- [zendframework/zend-config-aggregator-parameters#1](https://github.com/zendframework/zend-config-aggregator-parameters/pull/1) adds the ability to define parameters that reference other parameters.
 
 ### Deprecated
 

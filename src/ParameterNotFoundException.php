@@ -1,13 +1,14 @@
 <?php
+
 /**
- * @see       https://github.com/zendframework/zend-config-aggregator-parameters for the canonical source repository
- * @copyright Copyright (c) 2018 Zend Technologies USA Inc. (https://www.zend.com)
- * @license   https://github.com/zendframework/zend-config-aggregator-parameters/blob/master/LICENSE.md New BSD License
+ * @see       https://github.com/laminas/laminas-config-aggregator-parameters for the canonical source repository
+ * @copyright https://github.com/laminas/laminas-config-aggregator-parameters/blob/master/COPYRIGHT.md
+ * @license   https://github.com/laminas/laminas-config-aggregator-parameters/blob/master/LICENSE.md New BSD License
  */
 
 declare(strict_types=1);
 
-namespace Zend\ConfigAggregatorParameters;
+namespace Laminas\ConfigAggregatorParameters;
 
 use InvalidArgumentException;
 use Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException as BaseException;
