@@ -1,6 +1,6 @@
 # Usage
 
-This package supplies a [zend-config-aggregator post processor](https://docs.zendframework.com/zend-config-aggregator/config-post-processors/)
+This package supplies a [laminas-config-aggregator post processor](https://docs.laminas.dev/laminas-config-aggregator/config-post-processors/)
 that consumes the [Symfony DependencyInjection ParameterBag](https://symfony.com/doc/current/configuration/using_parameters_in_dic.html)
 in order to allow users to define parameters to re-use within their
 configuration.
@@ -22,9 +22,9 @@ an exception when post-processing the configuration.
 As a self-contained example:
 
 ```php
-use Zend\ConfigAggregator\ArrayProvider;
-use Zend\ConfigAggregator\ConfigAggregator;
-use Zend\ConfigAggregatorParameters\ParameterPostProcessor;
+use Laminas\ConfigAggregator\ArrayProvider;
+use Laminas\ConfigAggregator\ConfigAggregator;
+use Laminas\ConfigAggregatorParameters\ParameterPostProcessor;
 
 $aggregator = new ConfigAggregator(
     [
