@@ -1,5 +1,5 @@
-<ruleset name="Zend Framework Coding Standard">
-    <rule ref="./vendor/zendframework/zend-coding-standard/ruleset.xml"/>
+<ruleset name="Laminas Coding Standard">
+    <rule ref="./vendor/laminas/laminas-coding-standard/ruleset.xml"/>
     <!-- Paths to check -->
     <file>src</file>
     <file>test</file>

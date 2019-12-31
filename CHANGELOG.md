@@ -6,11 +6,11 @@ All notable changes to this project will be documented in this file, in reverse 
 
 ### Added
 
-- [#2](https://github.com/zendframework/zend-config-aggregator-parameters/pull/2) adds support for PHP 7.3.
+- [zendframework/zend-config-aggregator-parameters#2](https://github.com/zendframework/zend-config-aggregator-parameters/pull/2) adds support for PHP 7.3.
 
 ### Changed
 
-- [#1](https://github.com/zendframework/zend-config-aggregator-parameters/pull/1) adds the ability to define parameters that reference other parameters.
+- [zendframework/zend-config-aggregator-parameters#1](https://github.com/zendframework/zend-config-aggregator-parameters/pull/1) adds the ability to define parameters that reference other parameters.
 
 ### Deprecated
 
