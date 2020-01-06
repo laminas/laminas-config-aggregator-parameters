@@ -1,6 +1,6 @@
 # laminas-config-aggregator-parameters
 
-[![Build Status](https://travis-ci.org/laminas/laminas-config-aggregator-parameters.svg?branch=master)](https://travis-ci.org/laminas/laminas-config-aggregator-parameters)
+[![Build Status](https://travis-ci.com/laminas/laminas-config-aggregator-parameters.svg?branch=master)](https://travis-ci.com/laminas/laminas-config-aggregator-parameters)
 [![Coverage Status](https://coveralls.io/repos/github/laminas/laminas-config-aggregator-parameters/badge.svg?branch=master)](https://coveralls.io/github/laminas/laminas-config-aggregator-parameters?branch=master)
 
 Provides an extension to the `laminas/laminas-config-aggregator` to allow parameters within your configuration.
