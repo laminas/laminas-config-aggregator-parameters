@@ -22,7 +22,7 @@ All notable changes to this project will be documented in this file, in reverse 
 
 ### Fixed
 
-- Nothing.
+- [#1](https://github.com/laminas/laminas-config-aggregator-parameters/pull/1) updates symfony/dependency-injection to require minimum versions with fix for CVE-2019-10910 
 
 ## 1.2.1 - TBD
 
