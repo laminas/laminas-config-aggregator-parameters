@@ -2,7 +2,7 @@ site_name: laminas-config-aggregator-parameters
 docs_dir: docs/book
 site_dir: docs/html
 nav:
-    - index.md
+    - Home: index.md
     - Usage: usage.md
 site_description: 'PostProcessor extension for laminas/laminas-config-aggregator to allow usage of templated parameters within your configuration'
 repo_url: 'https://github.com/laminas/laminas-config-aggregator-parameters'
