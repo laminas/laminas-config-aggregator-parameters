@@ -8,4 +8,3 @@ site_description: 'PostProcessor extension for laminas/laminas-config-aggregator
 repo_url: 'https://github.com/laminas/laminas-config-aggregator-parameters'
 extra:
     project: Components
-    project_url: 'https://docs.laminas.dev'
