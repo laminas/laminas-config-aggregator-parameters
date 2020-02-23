@@ -21,11 +21,18 @@ class ParameterPostProcessor
     private $parameters;
 
     /**
-     * @param array $parameters
+     * @var bool
      */
-    public function __construct(array $parameters)
+    private $continueOnError;
+
+    /**
+     * @param array $parameters
+     * @param bool $continueOnError If true processing is not interrupted when a non-existent key found
+     */
+    public function __construct(array $parameters, bool $continueOnError = false)
     {
         $this->parameters = $parameters;
+        $this->continueOnError = $continueOnError;
     }
 
     public function __invoke(array $config) : array
@@ -38,7 +45,10 @@ class ParameterPostProcessor
                 $value = $parameters->unescapeValue($parameters->resolveValue($value));
             });
         } catch (SymfonyParameterNotFoundException $exception) {
-            throw ParameterNotFoundException::fromException($exception);
+            // Skip throwing an exception if continue on error is enabled
+            if ($this->continueOnError !== true) {
+                throw ParameterNotFoundException::fromException($exception);
+            }
         }
 
         $config['parameters'] = $parameters->all();

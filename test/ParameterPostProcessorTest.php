@@ -76,6 +76,13 @@ class ParameterPostProcessorTest extends TestCase
         $processor(['foo' => '%foo%']);
     }
 
+    public function testAllowsMissingParameter()
+    {
+        $processor = new ParameterPostProcessor([], true);
+        $processed = $processor(['foo' => '%foo%']);
+        $this->assertEquals('%foo%', $processed['foo']);
+    }
+
     public function testResolvesParameterizedParameters()
     {
         $processor = new ParameterPostProcessor([
