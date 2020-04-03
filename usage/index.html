@@ -251,7 +251,7 @@ parameters as well.</p>
 double-escape the percentage signs: <code>%%name%%</code>. Failure to do so will result in
 an exception when post-processing the configuration.</p>
 <p>As a self-contained example:</p>
-<pre class=codehilite><code class=language-php>use Laminas\ConfigAggregator\ArrayProvider;
+<pre class="highlight"><code class="language-php">use Laminas\ConfigAggregator\ArrayProvider;
 use Laminas\ConfigAggregator\ConfigAggregator;
 use Laminas\ConfigAggregatorParameters\ParameterPostProcessor;
 
@@ -277,31 +277,32 @@ $aggregator = new ConfigAggregator(
 );
 
 var_dump($aggregator-&gt;getMergedConfig());</code></pre>
+
 <p>The result of the above will be:</p>
-<pre class=codehilite><code class=language-php>array(5) {
+<pre class="highlight"><code class="language-php">array(5) {
   'parameter_usage' =&gt;
-  string(3) &quot;bar&quot;
+  string(3) "bar"
   'parameter_name' =&gt;
-  string(5) &quot;%foo%&quot;
+  string(5) "%foo%"
   'recursive_parameter_usage' =&gt;
-  string(3) &quot;qoo&quot;
+  string(3) "qoo"
   'parameterized_parameter_usage' =&gt;
-  string(3) &quot;bar&quot;
+  string(3) "bar"
   'parameters' =&gt;
   array(4) {
     'foo' =&gt;
-    string(3) &quot;bar&quot;
+    string(3) "bar"
     'bar' =&gt;
     array(2) {
       'baz' =&gt;
-      string(3) &quot;qoo&quot;
+      string(3) "qoo"
       'quux' =&gt;
-      string(3) &quot;bar&quot;
+      string(3) "bar"
     }
     'bar.baz' =&gt;
-    string(3) &quot;qoo&quot;
+    string(3) "qoo"
     'bar.quux' =&gt;
-    string(3) &quot;bar&quot;
+    string(3) "bar"
   }
 }</code></pre>
 
