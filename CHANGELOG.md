@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
+## 1.3.0 - TBD
+
+### Added
+
+- Nothing.
+
+### Changed
+
+- Nothing.
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- [#1](https://github.com/laminas/laminas-config-aggregator-parameters/pull/1) updates symfony/dependency-injection to require minimum versions with fix for CVE-2019-10910 
+
 ## 1.2.1 - TBD
 
 ### Added
