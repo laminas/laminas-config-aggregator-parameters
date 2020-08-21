@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file, in reverse 
 
 ### Added
 
-- Nothing.
+- [#4](https://github.com/laminas/laminas-config-aggregator-parameters/pull/4) Added `LazyParameterPostProcessor` which can be used as a replacement for `ParameterPostProcessor` in case the parameters are loaded from i/o resources.
 
 ### Changed
 
