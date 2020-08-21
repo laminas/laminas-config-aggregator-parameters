@@ -84,7 +84,7 @@ array(5) {
 }
 ```
 
-## Parameter lazy loading
+## Parameter Lazy Loading
 
 If your parameters are resolved from a database, redis, consul, or any other i/o resource, you can use the `LazyParameterPostProcessor` which consumes just a `callable` which can provide the parameters.
 
