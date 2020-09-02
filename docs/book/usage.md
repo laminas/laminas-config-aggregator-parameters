@@ -1,4 +1,4 @@
-# Usage
+# Basic Usage
 
 This package supplies a [laminas-config-aggregator post processor](https://docs.laminas.dev/laminas-config-aggregator/config-post-processors/)
 that consumes the [Symfony DependencyInjection ParameterBag](https://symfony.com/doc/current/configuration/using_parameters_in_dic.html)
