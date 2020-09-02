@@ -24,6 +24,22 @@ All notable changes to this project will be documented in this file, in reverse 
 
 - Nothing.
 
+## 1.4.1 - 2020-09-02
+
+### Release Notes for [1.4.1](https://github.com/laminas/laminas-config-aggregator-parameters/milestone/2)
+
+1.4.x bugfix release (patch)
+
+### 1.4.1
+
+- Total issues resolved: **0**
+- Total pull requests resolved: **1**
+- Total contributors: **1**
+
+#### Documentation,Enhancement
+
+ - [5: Updates version hints, headline and line length in documentation](https://github.com/laminas/laminas-config-aggregator-parameters/pull/5) thanks to @froschdesign
+
 ## 1.4.0 - 2020-09-02
 
 ### Added
