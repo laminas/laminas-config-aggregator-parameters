@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 1.4.0 - TBD
+## 1.4.0 - 2020-09-02
 
 ### Added
 
@@ -24,6 +24,22 @@ All notable changes to this project will be documented in this file, in reverse 
 
 - Nothing.
 
+
+-----
+
+### Release Notes for [1.4.0](https://github.com/laminas/laminas-config-aggregator-parameters/milestone/1)
+
+
+
+### 1.4.0
+
+- Total issues resolved: **0**
+- Total pull requests resolved: **1**
+- Total contributors: **1**
+
+#### Enhancement
+
+ - [4: lazy parameter processor](https://github.com/laminas/laminas-config-aggregator-parameters/pull/4) thanks to @boesing
 ## 1.3.0 - 2020-04-14
 
 ### Added
