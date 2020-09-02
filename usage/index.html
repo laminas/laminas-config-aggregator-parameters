@@ -201,6 +201,17 @@
 
     
     
+        <div class="toc">
+            <h6 class="toc__headline">On this page</h6>
+            <ul class="toc__list">
+                
+                    <li class="toc__entry">
+                        <a href="#parameter-lazy-loading" class="toc__link nav-link">Parameter Lazy Loading</a>
+                    </li>
+                
+            </ul>
+        </div>
+    
 
                 
 
@@ -305,6 +316,10 @@ var_dump($aggregator-&gt;getMergedConfig());</code></pre>
     string(3) "bar"
   }
 }</code></pre>
+
+<h2 id="parameter-lazy-loading">Parameter Lazy Loading</h2>
+<p>If your parameters are resolved from a database, redis, consul, or any other i/o resource, you can use the <code>LazyParameterPostProcessor</code> which consumes just a <code>callable</code> which can provide the parameters.</p>
+<p>In case you are using config-caching, the i/o is not executed when performed in the <code>callable</code>.</p>
 
 
 
