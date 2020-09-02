@@ -15,8 +15,9 @@ Parameters may be defined as nested associative arrays as well; in such cases, a
 `.` character references an additional layer of hierarchy to dereference:
 `%foo.bar%` refers to the paramter found at `'foo' => [ 'bar' => 'value' ]`.
 
-> Starting in version 1.1.0, you can use parameters which reference other
-> parameters as well.
+> Available since version 1.1.0 
+
+Parameters which reference other parameters can also be used.
 
 If you wish to use a literal `%name%` within your configuration, you **must**
 double-escape the percentage signs: `%%name%%`. Failure to do so will result in
@@ -85,6 +86,8 @@ array(5) {
 ```
 
 ## Parameter Lazy Loading
+
+> Available since version 1.4.0 
 
 If your parameters are resolved from a database, redis, consul, or any other i/o resource, you can use the `LazyParameterPostProcessor` which consumes just a `callable` which can provide the parameters.
 
