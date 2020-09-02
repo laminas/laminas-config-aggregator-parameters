@@ -2,11 +2,29 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
+## 1.5.0 - TBD
+
+### Added
+
+- Nothing.
+
+### Changed
+
+- Nothing.
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- Nothing.
+
 ## 1.4.1 - 2020-09-02
-
-
-
------
 
 ### Release Notes for [1.4.1](https://github.com/laminas/laminas-config-aggregator-parameters/milestone/2)
 
@@ -21,6 +39,7 @@ All notable changes to this project will be documented in this file, in reverse 
 #### Documentation,Enhancement
 
  - [5: Updates version hints, headline and line length in documentation](https://github.com/laminas/laminas-config-aggregator-parameters/pull/5) thanks to @froschdesign
+
 ## 1.4.0 - 2020-09-02
 
 ### Added
