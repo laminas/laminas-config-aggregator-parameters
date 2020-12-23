@@ -9,7 +9,7 @@
     <link rel="canonical" href="https://docs.laminas.dev/laminas-config-aggregator-parameters/usage/">
     <link rel="shortcut icon" href="https://docs.laminas.dev/img/trademark-laminas-foundation-rgb.svg">
 
-    <title>Usage - laminas-config-aggregator-parameters - Laminas Docs</title>
+    <title>Basic Usage - laminas-config-aggregator-parameters - Laminas Docs</title>
 
     <link rel="stylesheet" href="https://docs.laminas.dev/css/styles.css">
     
@@ -130,7 +130,7 @@
                     
                         
                             <li class="subnavigation__list-item subnavigation__list-item--active">
-                                <a href="./" class="subnavigation__link">Usage</a>
+                                <a href="./" class="subnavigation__link">Basic Usage</a>
                             </li>
                         
                     
@@ -174,7 +174,7 @@
             </div>
 
             
-            <div class="col-4 text-sm-right">
+            <div class="col-4 text-right">
                 
                     
 
@@ -227,7 +227,7 @@
 
                 
 
-                <li class="breadcrumb-item active" aria-current="page">Usage</li>
+                <li class="breadcrumb-item active" aria-current="page">Basic Usage</li>
             
         
     </ol>
@@ -241,7 +241,7 @@
     
     
 
-    <h1 id="usage">Usage</h1>
+    <h1 id="basic-usage">Basic Usage</h1>
 <p>This package supplies a <a href="https://docs.laminas.dev/laminas-config-aggregator/config-post-processors/">laminas-config-aggregator post processor</a>
 that consumes the <a href="https://symfony.com/doc/current/configuration/using_parameters_in_dic.html">Symfony DependencyInjection ParameterBag</a>
 in order to allow users to define parameters to re-use within their
@@ -255,9 +255,9 @@ Parameters may be defined as nested associative arrays as well; in such cases, a
 <code>.</code> character references an additional layer of hierarchy to dereference:
 <code>%foo.bar%</code> refers to the paramter found at <code>'foo' =&gt; [ 'bar' =&gt; 'value' ]</code>.</p>
 <blockquote>
-<p>Starting in version 1.1.0, you can use parameters which reference other
-parameters as well.</p>
+<p>Available since version 1.1.0 </p>
 </blockquote>
+<p>Parameters which reference other parameters can also be used.</p>
 <p>If you wish to use a literal <code>%name%</code> within your configuration, you <strong>must</strong>
 double-escape the percentage signs: <code>%%name%%</code>. Failure to do so will result in
 an exception when post-processing the configuration.</p>
@@ -288,7 +288,6 @@ $aggregator = new ConfigAggregator(
 );
 
 var_dump($aggregator-&gt;getMergedConfig());</code></pre>
-
 <p>The result of the above will be:</p>
 <pre class="highlight"><code class="language-php">array(5) {
   'parameter_usage' =&gt;
@@ -316,10 +315,15 @@ var_dump($aggregator-&gt;getMergedConfig());</code></pre>
     string(3) "bar"
   }
 }</code></pre>
-
 <h2 id="parameter-lazy-loading">Parameter Lazy Loading</h2>
-<p>If your parameters are resolved from a database, redis, consul, or any other i/o resource, you can use the <code>LazyParameterPostProcessor</code> which consumes just a <code>callable</code> which can provide the parameters.</p>
-<p>In case you are using config-caching, the i/o is not executed when performed in the <code>callable</code>.</p>
+<blockquote>
+<p>Available since version 1.4.0 </p>
+</blockquote>
+<p>If your parameters are resolved from a database, redis, consul, or any other i/o
+resource, you can use the <code>LazyParameterPostProcessor</code> which consumes just a
+<code>callable</code> which can provide the parameters.</p>
+<p>In case you are using config-caching, the i/o is not executed when performed in
+the <code>callable</code>.</p>
 
 
 
@@ -393,7 +397,7 @@ var_dump($aggregator-&gt;getMergedConfig());</code></pre>
                     
                         
                             <li class="subnavigation__list-item subnavigation__list-item--active">
-                                <a href="./" class="subnavigation__link">Usage</a>
+                                <a href="./" class="subnavigation__link">Basic Usage</a>
                             </li>
                         
                     
