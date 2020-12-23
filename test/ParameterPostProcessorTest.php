@@ -10,12 +10,15 @@ declare(strict_types=1);
 
 namespace LaminasTest\ConfigAggregatorParameters;
 
+use DMS\PHPUnitExtensions\ArraySubset\ArraySubsetAsserts;
 use Laminas\ConfigAggregatorParameters\ParameterNotFoundException;
 use Laminas\ConfigAggregatorParameters\ParameterPostProcessor;
 use PHPUnit\Framework\TestCase;
 
 class ParameterPostProcessorTest extends TestCase
 {
+    use ArraySubsetAsserts;
+
     public function parameterProvider()
     {
         return [
