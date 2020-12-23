@@ -2,27 +2,26 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 1.5.0 - TBD
+## 1.5.0 - 2020-12-23
 
-### Added
 
-- Nothing.
+-----
 
-### Changed
+### Release Notes for [1.5.0](https://github.com/laminas/laminas-config-aggregator-parameters/milestone/3)
 
-- Nothing.
+Feature release (minor)
 
-### Deprecated
+### 1.5.0
 
-- Nothing.
+- Total issues resolved: **1**
+- Total pull requests resolved: **2**
+- Total contributors: **3**
 
-### Removed
+#### Enhancement
 
-- Nothing.
+ - [9: PHP 8.0 support](https://github.com/laminas/laminas-config-aggregator-parameters/pull/9) thanks to @svycka and @boesing
 
-### Fixed
-
-- Nothing.
+ - [6: Merge release 1.4.1 into 1.5.x](https://github.com/laminas/laminas-config-aggregator-parameters/pull/6) thanks to @github-actions[bot]
 
 ## 1.4.1 - 2020-09-02
 
