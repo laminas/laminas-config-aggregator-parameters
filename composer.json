@@ -1,27 +1,17 @@
 {
     "name": "laminas/laminas-config-aggregator-parameters",
     "description": "PostProcessor extension for laminas/laminas-config-aggregator to allow usage of templated parameters within your configuration",
-    "license": "BSD-3-Clause",
     "homepage": "https://laminas.dev",
-    "support": {
-        "docs": "https://docs.laminas.dev/laminas-config-aggregator-parameters/",
-        "issues": "https://github.com/laminas/laminas-config-aggregator-parameters/issues",
-        "source": "https://github.com/laminas/laminas-config-aggregator-parameters",
-        "rss": "https://github.com/laminas/laminas-config-aggregator-parameters/releases.atom",
-        "chat": "https://laminas.dev/chat",
-        "forum": "https://discourse.laminas.dev"
-    },
-    "config": {
-        "sort-packages": true
-    },
-    "extra": {
-    },
+    "license": "BSD-3-Clause",
     "require": {
         "php": "^7.3 || ~8.0.0",
         "laminas/laminas-config-aggregator": "^1.1",
         "laminas/laminas-stdlib": "^3.1",
         "laminas/laminas-zendframework-bridge": "^1.0",
         "symfony/dependency-injection": "^3.4.36 || ^4.4.2 || ^5.0"
+    },
+    "replace": {
+        "zendframework/zend-config-aggregator-parameters": "^1.2.0"
     },
     "require-dev": {
         "dms/phpunit-arraysubset-asserts": "^0.2.1",
@@ -31,6 +21,10 @@
         "psalm/plugin-phpunit": "^0.15.1",
         "vimeo/psalm": "^4.7"
     },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {},
     "autoload": {
         "psr-4": {
             "Laminas\\ConfigAggregatorParameters\\": "src/"
@@ -52,7 +46,12 @@
         "test": "phpunit --colors=always",
         "test-coverage": "phpunit --colors=always --coverage-clover clover.xml"
     },
-    "replace": {
-        "zendframework/zend-config-aggregator-parameters": "^1.2.0"
+    "support": {
+        "issues": "https://github.com/laminas/laminas-config-aggregator-parameters/issues",
+        "forum": "https://discourse.laminas.dev",
+        "chat": "https://laminas.dev/chat",
+        "source": "https://github.com/laminas/laminas-config-aggregator-parameters",
+        "docs": "https://docs.laminas.dev/laminas-config-aggregator-parameters/",
+        "rss": "https://github.com/laminas/laminas-config-aggregator-parameters/releases.atom"
     }
 }
