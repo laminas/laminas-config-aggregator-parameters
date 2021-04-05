@@ -22,7 +22,17 @@ final class LazyParameterPostProcessorTest extends TestCase
 
     public function testParametersAreBeingProcessed(): void
     {
-        $provider = static function (): array {
+        /**
+         * @return string[]
+         *
+         * @psalm-return array{foo: string}
+         */
+        $provider = /**
+         * @return string[]
+         *
+         * @psalm-return array{foo: string}
+         */
+        static function (): array {
             return ['foo' => 'bar'];
         };
 

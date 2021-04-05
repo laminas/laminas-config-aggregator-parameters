@@ -11,7 +11,7 @@ final class LazyParameterPostProcessor
     private $parameterProvider;
 
     /**
-     * @psalm-param callable():array<string,mixed> $parameterProvider
+     * @psalm-param callable():array<array-key, mixed> $parameterProvider
      */
     public function __construct(callable $parameterProvider)
     {
@@ -19,14 +19,15 @@ final class LazyParameterPostProcessor
     }
 
     /**
-     * @param array<string,mixed> $config
+     * @param array<array-key, mixed> $config
      *
-     * @return array<string,mixed>
+     * @return array<array-key, mixed>
      */
     public function __invoke(array $config): array
     {
+
         $parameterProvider = $this->parameterProvider;
 
-        return (new ParameterPostProcessor($parameterProvider()))($config);
+        return (new ParameterPostProcessor((array) $parameterProvider()))($config);
     }
 }

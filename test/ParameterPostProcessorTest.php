@@ -19,7 +19,12 @@ class ParameterPostProcessorTest extends TestCase
 {
     use ArraySubsetAsserts;
 
-    public function parameterProvider()
+    /**
+     * @return (string|string[])[][][]
+     *
+     * @psalm-return array{root-scoped-parameter: array{0: array{foo: string}, 1: array{config: array{param: string, used_parameter: string}}, 2: array{config: array{param: string, used_parameter: string}}}, multi-level-parameter: array{0: array{foo: array{bar: string}}, 1: array{config: array{param: string, used_parameter: string}}, 2: array{config: array{param: string, used_parameter: string}}}}
+     */
+    public function parameterProvider(): array
     {
         return [
             'root-scoped-parameter' => [
@@ -63,8 +68,10 @@ class ParameterPostProcessorTest extends TestCase
 
     /**
      * @dataProvider parameterProvider
+     *
+     * @return void
      */
-    public function testCanApplyParameters(array $parameters, array $configuration, array $expected)
+    public function testCanApplyParameters(array $parameters, array $configuration, array $expected): void
     {
         $processor = new ParameterPostProcessor($parameters);
         $processed = $processor($configuration);
@@ -72,14 +79,14 @@ class ParameterPostProcessorTest extends TestCase
         $this->assertArraySubset($expected, $processed);
     }
 
-    public function testCanDetectMissingParameter()
+    public function testCanDetectMissingParameter(): void
     {
         $processor = new ParameterPostProcessor([]);
         $this->expectException(ParameterNotFoundException::class);
         $processor(['foo' => '%foo%']);
     }
 
-    public function testResolvesParameterizedParameters()
+    public function testResolvesParameterizedParameters(): void
     {
         $processor = new ParameterPostProcessor([
             'foo' => 'bar',
@@ -103,7 +110,7 @@ class ParameterPostProcessorTest extends TestCase
         ], $processed);
     }
 
-    public function testResolvesParameterizedParametersInReversedOrder()
+    public function testResolvesParameterizedParametersInReversedOrder(): void
     {
         $processor = new ParameterPostProcessor([
             'foo' => '%bar%',

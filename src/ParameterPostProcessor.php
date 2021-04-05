@@ -28,14 +28,19 @@ class ParameterPostProcessor
         $this->parameters = $parameters;
     }
 
+    /**
+     * @return (array|mixed)[]
+     *
+     * @psalm-return array{parameters: array}
+     */
     public function __invoke(array $config) : array
     {
 
         try {
             $parameters = $this->getResolvedParameters();
 
-            array_walk_recursive($config, function (&$value) use ($parameters) {
-                $value = $parameters->unescapeValue($parameters->resolveValue($value));
+            array_walk_recursive($config, function (string &$value) use ($parameters) {
+                $value = (string) $parameters->unescapeValue($parameters->resolveValue($value));
             });
         } catch (SymfonyParameterNotFoundException $exception) {
             throw ParameterNotFoundException::fromException($exception);
@@ -49,6 +54,7 @@ class ParameterPostProcessor
     private function resolveNestedParameters(array $values, string $prefix = '') : array
     {
         $convertedValues = [];
+        /** @var string|array $value */
         foreach ($values as $key => $value) {
             // Do not provide numeric keys as single parameter
             if (is_numeric($key)) {
@@ -56,6 +62,7 @@ class ParameterPostProcessor
             }
 
             $convertedValues[$prefix . $key] = $value;
+
             if (is_array($value)) {
                 $convertedValues += $this->resolveNestedParameters($value, $prefix . $key . '.');
             }
