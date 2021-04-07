@@ -20,9 +20,7 @@ class ParameterPostProcessorTest extends TestCase
     use ArraySubsetAsserts;
 
     /**
-     * @return (string|string[])[][][]
-     *
-     * @psalm-return array{root-scoped-parameter: array{0: array{foo: string}, 1: array{config: array{param: string, used_parameter: string}}, 2: array{config: array{param: string, used_parameter: string}}}, multi-level-parameter: array{0: array{foo: array{bar: string}}, 1: array{config: array{param: string, used_parameter: string}}, 2: array{config: array{param: string, used_parameter: string}}}}
+     * @psalm-return array<string,array{0:array<string,mixed>,1:array{config:array{param:string,used_parameter:string}},2:array{param:mixed,used_parameter:string}}>
      */
     public function parameterProvider(): array
     {
@@ -68,8 +66,6 @@ class ParameterPostProcessorTest extends TestCase
 
     /**
      * @dataProvider parameterProvider
-     *
-     * @return void
      */
     public function testCanApplyParameters(array $parameters, array $configuration, array $expected): void
     {

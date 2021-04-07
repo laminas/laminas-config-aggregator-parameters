@@ -13,21 +13,37 @@ namespace Laminas\ConfigAggregatorParameters;
 use InvalidArgumentException;
 use Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException as BaseException;
 
+/** @psalm-suppress MissingConstructor */
 class ParameterNotFoundException extends InvalidArgumentException
 {
+    /**
+     * @var string
+     */
+    private $key;
+
     public static function fromException(BaseException $exception) : self
     {
         /** @var string $key */
         $key = $exception->getKey();
+
         /** @var int $code */
         $code = $exception->getCode();
 
-        return new self(sprintf(
+        $newParameterNotFoundException = new self(sprintf(
             'Found key "%s" within configuration, but it has no associated parameter defined',
             $key
         ),
             $code,
             $exception
         );
+
+        $newParameterNotFoundException->key = $key;
+
+        return $newParameterNotFoundException;
+    }
+
+    public function getKey() : string
+    {
+        return $this->key;
     }
 }
