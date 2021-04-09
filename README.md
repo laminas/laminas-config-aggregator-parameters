@@ -1,7 +1,6 @@
 # laminas-config-aggregator-parameters
 
-[![Build Status](https://travis-ci.com/laminas/laminas-config-aggregator-parameters.svg?branch=master)](https://travis-ci.com/laminas/laminas-config-aggregator-parameters)
-[![Coverage Status](https://coveralls.io/repos/github/laminas/laminas-config-aggregator-parameters/badge.svg?branch=master)](https://coveralls.io/github/laminas/laminas-config-aggregator-parameters?branch=master)
+[![Build Status](https://github.com/laminas/laminas-config-aggregator-parameters/workflows/Continuous%20Integration/badge.svg)](https://github.com/laminas/laminas-config-aggregator-parameters/actions?query=workflow%3A"Continuous+Integration")
 
 Provides an extension to the `laminas/laminas-config-aggregator` to allow parameters within your configuration.
  
