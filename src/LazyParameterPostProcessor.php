@@ -1,13 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Laminas\ConfigAggregatorParameters;
 
 final class LazyParameterPostProcessor
 {
-    /**
-     * @var callable
-     */
+    /** @var callable */
     private $parameterProvider;
 
     /**
@@ -23,7 +22,6 @@ final class LazyParameterPostProcessor
      */
     public function __invoke(array $config): array
     {
-
         $parameterProvider = $this->parameterProvider;
 
         return (new ParameterPostProcessor((array) $parameterProvider()))($config);

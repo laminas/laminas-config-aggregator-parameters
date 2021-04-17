@@ -13,11 +13,13 @@ namespace Laminas\ConfigAggregatorParameters;
 use Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException as SymfonyParameterNotFoundException;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 
+use function array_walk_recursive;
+use function is_array;
+use function is_numeric;
+
 class ParameterPostProcessor
 {
-    /**
-     * @var array
-     */
+    /** @var array */
     private $parameters;
 
     /**
@@ -31,9 +33,8 @@ class ParameterPostProcessor
     /**
      * @psalm-return array{parameters: array}
      */
-    public function __invoke(array $config) : array
+    public function __invoke(array $config): array
     {
-
         try {
             $parameters = $this->getResolvedParameters();
 
@@ -51,7 +52,7 @@ class ParameterPostProcessor
         return $config;
     }
 
-    private function resolveNestedParameters(array $values, string $prefix = '') : array
+    private function resolveNestedParameters(array $values, string $prefix = ''): array
     {
         $convertedValues = [];
 
@@ -62,7 +63,6 @@ class ParameterPostProcessor
                 continue;
             }
 
-            /** @var array{parameters: array<array-key, mixed>} */
             $convertedValues[$prefix . $key] = $value;
 
             if (is_array($value)) {
@@ -73,10 +73,10 @@ class ParameterPostProcessor
         return $convertedValues;
     }
 
-    private function getResolvedParameters() : ParameterBag
+    private function getResolvedParameters(): ParameterBag
     {
         $resolved = $this->resolveNestedParameters($this->parameters);
-        $bag = new ParameterBag($resolved);
+        $bag      = new ParameterBag($resolved);
 
         $bag->resolve();
         return $bag;

@@ -31,13 +31,13 @@ class ParameterPostProcessorTest extends TestCase
                 ],
                 [
                     'config' => [
-                        'param' => '%foo%',
+                        'param'          => '%foo%',
                         'used_parameter' => '%%foo%%',
                     ],
                 ],
                 [
                     'config' => [
-                        'param' => 'bar',
+                        'param'          => 'bar',
                         'used_parameter' => '%foo%',
                     ],
                 ],
@@ -50,13 +50,13 @@ class ParameterPostProcessorTest extends TestCase
                 ],
                 [
                     'config' => [
-                        'param' => '%foo.bar%',
+                        'param'          => '%foo.bar%',
                         'used_parameter' => '%%foo.bar%%',
                     ],
                 ],
                 [
                     'config' => [
-                        'param' => 'baz',
+                        'param'          => 'baz',
                         'used_parameter' => '%foo.bar%',
                     ],
                 ],
@@ -85,9 +85,9 @@ class ParameterPostProcessorTest extends TestCase
     public function testResolvesParameterizedParameters(): void
     {
         $processor = new ParameterPostProcessor([
-            'foo' => 'bar',
-            'bar' => 'baz',
-            'baz' => '%foo%',
+            'foo'    => 'bar',
+            'bar'    => 'baz',
+            'baz'    => '%foo%',
             'nested' => [
                 'foo' => '%bar%',
                 'bar' => '%nested.foo%',
@@ -97,7 +97,7 @@ class ParameterPostProcessorTest extends TestCase
         $processed = $processor(['foo' => '%nested.bar%']);
 
         $this->assertArraySubset([
-            'foo' => 'baz',
+            'foo'        => 'baz',
             'parameters' => [
                 'nested' => [
                     'bar' => 'baz',

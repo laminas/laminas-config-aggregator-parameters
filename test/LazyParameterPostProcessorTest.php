@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace LaminasTest\ConfigAggregatorParameters;
@@ -24,14 +25,12 @@ final class LazyParameterPostProcessorTest extends TestCase
     {
         /**
          * @return string[]
-         *
          * @psalm-return array{foo: string}
          */
         $provider = /**
-         * @return string[]
-         *
-         * @psalm-return array{foo: string}
-         */
+        $provider =  * @return string[]
+        $provider =  * @psalm-return array{foo: string}
+                     */
         static function (): array {
             return ['foo' => 'bar'];
         };
