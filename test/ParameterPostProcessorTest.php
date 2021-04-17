@@ -20,7 +20,9 @@ class ParameterPostProcessorTest extends TestCase
     use ArraySubsetAsserts;
 
     /**
+     * @codingStandardsIgnoreStart
      * @psalm-return array{root-scoped-parameter: array{0: array{foo: string}, 1: array{config: array{param: string, used_parameter: string}}, 2: array{config: array{param: string, used_parameter: string}}}, multi-level-parameter: array{0: array{foo: array{bar: string}}, 1: array{config: array{param: string, used_parameter: string}}, 2: array{config: array{param: string, used_parameter: string}}}}
+     * @codingStandardsIgnoreEnd
      */
     public function parameterProvider(): array
     {
