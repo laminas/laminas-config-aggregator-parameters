@@ -29,7 +29,7 @@ class ParameterPostProcessor
     }
 
     /**
-     * @psalm-return array<string,mixed>
+     * @psalm-return array{parameters: array}
      */
     public function __invoke(array $config) : array
     {
