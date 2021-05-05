@@ -3,7 +3,15 @@
 [![Build Status](https://github.com/laminas/laminas-config-aggregator-parameters/workflows/Continuous%20Integration/badge.svg)](https://github.com/laminas/laminas-config-aggregator-parameters/actions?query=workflow%3A"Continuous+Integration")
 
 Provides an extension to the `laminas/laminas-config-aggregator` to allow parameters within your configuration.
- 
+
+## Installation
+
+Run the following to install this library:
+
+```bash
+$ composer require laminas/laminas-config-aggregator-parameters
+```
+
 ## Usage
 
 ```php
@@ -66,9 +74,12 @@ array(5) {
 }
 ```
 
-For more details, please refer to the [documentation](https://docs.laminas.dev/laminas-config-aggregator-parameters/).
+## Documentation
 
------
+Browse the documentation online at [https://docs.laminas.dev/laminas-config-aggregator-parameters](https://docs.laminas.dev/laminas-config-aggregator-parameters).
 
-- File issues at https://github.com/laminas/laminas-config-aggregator-parameters/issues
-- Documentation is at https://docs.laminas.dev/laminas-config-aggregator-parameters/
+## Support
+
+* Issues: [https://github.com/laminas/laminas-config-aggregator-parameters/issues](https://github.com/laminas/laminas-config-aggregator-parameters/issues)
+* Chat: [https://laminas.dev/chat](https://laminas.dev/chat)
+* Forum: [https://discourse.laminas.dev](https://discourse.laminas.dev)
