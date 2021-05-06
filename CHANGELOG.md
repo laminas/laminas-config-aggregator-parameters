@@ -2,27 +2,25 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 1.5.1 - TBD
+## 1.5.1 - 2021-05-06
 
-### Added
 
-- Nothing.
+-----
 
-### Changed
+### Release Notes for [1.5.1](https://github.com/laminas/laminas-config-aggregator-parameters/milestone/6)
 
-- Nothing.
+1.5.x bugfix release (patch)
 
-### Deprecated
+### 1.5.1
 
-- Nothing.
+- Total issues resolved: **0**
+- Total pull requests resolved: **2**
+- Total contributors: **2**
 
-### Removed
+#### Documentation,Enhancement
 
-- Nothing.
-
-### Fixed
-
-- Nothing.
+ - [16: Updates page structure of documentation](https://github.com/laminas/laminas-config-aggregator-parameters/pull/16) thanks to @froschdesign
+ - [14: Update README.md](https://github.com/laminas/laminas-config-aggregator-parameters/pull/14) thanks to @ghostwriter
 
 ## 1.5.0 - 2020-12-23
 
