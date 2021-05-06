@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PostProcessor extension for laminas/laminas-config-aggregator to allow usage of templated parameters within your configuration">  
-    <link rel="canonical" href="https://docs.laminas.dev/laminas-config-aggregator-parameters/">
+    <link rel="canonical" href="https://docs.laminas.dev/laminas-config-aggregator-parameters/parameter-lazy-loading/">
     <link rel="shortcut icon" href="https://docs.laminas.dev/img/trademark-laminas-foundation-rgb.svg">
 
-    <title>laminas-config-aggregator-parameters - Laminas Docs</title>
+    <title>Parameter Lazy Loading - laminas-config-aggregator-parameters - Laminas Docs</title>
 
     <link rel="stylesheet" href="https://docs.laminas.dev/css/styles.css">
     
@@ -115,7 +115,7 @@
                     
     <div class="subnavigation hidden-print">
         <h4 class="subnavigation__title">
-            <a href=".">laminas-config-aggregator-parameters</a>
+            <a href="..">laminas-config-aggregator-parameters</a>
         </h4>
 
         <h5 class="subnavigation__subtitle">Table of Contents</h5>
@@ -130,7 +130,7 @@
                     
                         
                             <li class="subnavigation__list-item ">
-                                <a href="introduction/" class="subnavigation__link">Introduction</a>
+                                <a href="../introduction/" class="subnavigation__link">Introduction</a>
                             </li>
                         
                     
@@ -144,7 +144,7 @@
                     
                         
                             <li class="subnavigation__list-item ">
-                                <a href="usage/" class="subnavigation__link">Basic Usage</a>
+                                <a href="../usage/" class="subnavigation__link">Basic Usage</a>
                             </li>
                         
                     
@@ -157,8 +157,8 @@
                     
                     
                         
-                            <li class="subnavigation__list-item ">
-                                <a href="parameter-lazy-loading/" class="subnavigation__link">Parameter Lazy Loading</a>
+                            <li class="subnavigation__list-item subnavigation__list-item--active">
+                                <a href="./" class="subnavigation__link">Parameter Lazy Loading</a>
                             </li>
                         
                     
@@ -224,6 +224,13 @@
             <div class="col-md-9 col-sm-12 content" role="main">
                 
                 
+                    
+    
+
+    
+    
+
+                
 
                 
                     <nav aria-label="breadcrumb">
@@ -233,7 +240,11 @@
             <li class="breadcrumb-item"><a href="https://docs.laminas.dev/components/">Components</a></li>
 
             
-                <li class="breadcrumb-item">laminas-config-aggregator-parameters</li>
+                <li class="breadcrumb-item"><a href="..">laminas-config-aggregator-parameters</a></li>
+
+                
+
+                <li class="breadcrumb-item active" aria-current="page">Parameter Lazy Loading</li>
             
         
     </ol>
@@ -243,22 +254,18 @@
 
 
 
-    <h1>laminas-config-aggregator-parameters</h1>
-<p>PostProcessor extension for laminas/laminas-config-aggregator to allow usage of templated parameters within your configuration</p>
 
+    
+    
 
-    <h2>Installation</h2>
-    <h3>Using Composer</h3>
-    <pre><code class="language-bash">$ composer require laminas/laminas-config-aggregator-parameters</code></pre>
-
-
-<h2>Support</h2>
-<ul>
-    <li>Issues: <a href="https://github.com/laminas/laminas-config-aggregator-parameters/issues">github.com/laminas/laminas-config-aggregator-parameters/issues</a></li>
-    <li>Source: <a href="https://github.com/laminas/laminas-config-aggregator-parameters/">github.com/laminas/laminas-config-aggregator-parameters/</a></li>
-    <li>Chat: <a href="https://laminas.dev/chat">laminas.dev/chat</a></li>
-    <li>Forum: <a href="https://discourse.laminas.dev/">discourse.laminas.dev</a></li>
-</ul>
+    <h1 id="parameter-lazy-loading">Parameter Lazy Loading</h1>
+<blockquote>
+<p>Available since version 1.4.0</p>
+</blockquote>
+<p>If your parameters are resolved from a database, redis, consul, or any other i/o
+resource, you can use the <code>LazyParameterPostProcessor</code> which consumes just a
+<code>callable</code> which can provide the parameters.</p>
+<p>In case you are using config-caching, the i/o is not executed when performed in the <code>callable</code>.</p>
 
 
 
@@ -269,14 +276,14 @@
         
         <li class="page-nav__item">
             
+                <a rel="prev" class="page-nav__link page-nav__link--prev" href="../usage/">
+                    <i class="fa fa-chevron-left"></i> Previous
+                </a>
+            
         </li>
 
         
         <li class="page-nav__item">
-            
-                <a rel="next" class="page-nav__link page-nav__link--next" href="introduction/">
-                    Next <i class="fa fa-chevron-right"></i>
-                </a>
             
         </li>
     </ul>
@@ -284,6 +291,15 @@
 
 
 
+
+    <div class="help-wanted">
+        <p>
+            Found a mistake or want to contribute to the documentation?
+            <a href="https://github.com/laminas/laminas-config-aggregator-parameters/edit/master/docs/book/parameter-lazy-loading.md" target="_blank" class="help-wanted__link">
+                Edit this page on GitHub!
+            </a>
+        </p>
+    </div>
 
                 
             </div>
@@ -308,7 +324,7 @@
                     
     <div class="subnavigation hidden-print">
         <h4 class="subnavigation__title">
-            <a href=".">laminas-config-aggregator-parameters</a>
+            <a href="..">laminas-config-aggregator-parameters</a>
         </h4>
 
         <h5 class="subnavigation__subtitle">Table of Contents</h5>
@@ -323,7 +339,7 @@
                     
                         
                             <li class="subnavigation__list-item ">
-                                <a href="introduction/" class="subnavigation__link">Introduction</a>
+                                <a href="../introduction/" class="subnavigation__link">Introduction</a>
                             </li>
                         
                     
@@ -337,7 +353,7 @@
                     
                         
                             <li class="subnavigation__list-item ">
-                                <a href="usage/" class="subnavigation__link">Basic Usage</a>
+                                <a href="../usage/" class="subnavigation__link">Basic Usage</a>
                             </li>
                         
                     
@@ -350,8 +366,8 @@
                     
                     
                         
-                            <li class="subnavigation__list-item ">
-                                <a href="parameter-lazy-loading/" class="subnavigation__link">Parameter Lazy Loading</a>
+                            <li class="subnavigation__list-item subnavigation__list-item--active">
+                                <a href="./" class="subnavigation__link">Parameter Lazy Loading</a>
                             </li>
                         
                     
@@ -456,13 +472,13 @@
 </footer>
 
     <script>
-        let base_url = '.',
+        let base_url = '..',
             project  = "components",
             siteName = 'laminas-config-aggregator-parameters';
     </script>
     <script src="https://docs.laminas.dev/js/scripts.js"></script>
     
-        <script src="search/main.js"></script>
+        <script src="../search/main.js"></script>
     
 
     
@@ -491,8 +507,3 @@
 
 
 </html>
-
-<!--
-MkDocs version : 1.1.2
-Build Date UTC : 2021-05-06 13:23:06.511508+00:00
--->

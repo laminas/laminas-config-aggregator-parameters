@@ -129,8 +129,36 @@
                     
                     
                         
+                            <li class="subnavigation__list-item ">
+                                <a href="../introduction/" class="subnavigation__link">Introduction</a>
+                            </li>
+                        
+                    
+                
+            
+
+                
+                
+
+                    
+                    
+                        
                             <li class="subnavigation__list-item subnavigation__list-item--active">
                                 <a href="./" class="subnavigation__link">Basic Usage</a>
+                            </li>
+                        
+                    
+                
+            
+
+                
+                
+
+                    
+                    
+                        
+                            <li class="subnavigation__list-item ">
+                                <a href="../parameter-lazy-loading/" class="subnavigation__link">Parameter Lazy Loading</a>
                             </li>
                         
                     
@@ -201,17 +229,6 @@
 
     
     
-        <div class="toc">
-            <h6 class="toc__headline">On this page</h6>
-            <ul class="toc__list">
-                
-                    <li class="toc__entry">
-                        <a href="#parameter-lazy-loading" class="toc__link nav-link">Parameter Lazy Loading</a>
-                    </li>
-                
-            </ul>
-        </div>
-    
 
                 
 
@@ -242,22 +259,6 @@
     
 
     <h1 id="basic-usage">Basic Usage</h1>
-<p>This package supplies a <a href="https://docs.laminas.dev/laminas-config-aggregator/config-post-processors/">laminas-config-aggregator post processor</a>
-that consumes the <a href="https://symfony.com/doc/current/configuration/using_parameters_in_dic.html">Symfony DependencyInjection ParameterBag</a>
-in order to allow users to define parameters to re-use within their
-configuration.</p>
-<p>As an example, one could define an API key, cache path, or other common
-filesystem location <em>once</em> as a <em>parameter</em>, and then refer to that parameter
-<em>multiple times</em> within the configuration, in order to simplify updates to the
-value.</p>
-<p>Parameters are referenced within configuration using <code>%name%</code> notation.
-Parameters may be defined as nested associative arrays as well; in such cases, a
-<code>.</code> character references an additional layer of hierarchy to dereference:
-<code>%foo.bar%</code> refers to the paramter found at <code>'foo' =&gt; [ 'bar' =&gt; 'value' ]</code>.</p>
-<blockquote>
-<p>Available since version 1.1.0 </p>
-</blockquote>
-<p>Parameters which reference other parameters can also be used.</p>
 <p>If you wish to use a literal <code>%name%</code> within your configuration, you <strong>must</strong>
 double-escape the percentage signs: <code>%%name%%</code>. Failure to do so will result in
 an exception when post-processing the configuration.</p>
@@ -315,15 +316,6 @@ var_dump($aggregator-&gt;getMergedConfig());</code></pre>
     string(3) "bar"
   }
 }</code></pre>
-<h2 id="parameter-lazy-loading">Parameter Lazy Loading</h2>
-<blockquote>
-<p>Available since version 1.4.0 </p>
-</blockquote>
-<p>If your parameters are resolved from a database, redis, consul, or any other i/o
-resource, you can use the <code>LazyParameterPostProcessor</code> which consumes just a
-<code>callable</code> which can provide the parameters.</p>
-<p>In case you are using config-caching, the i/o is not executed when performed in
-the <code>callable</code>.</p>
 
 
 
@@ -334,7 +326,7 @@ the <code>callable</code>.</p>
         
         <li class="page-nav__item">
             
-                <a rel="prev" class="page-nav__link page-nav__link--prev" href="..">
+                <a rel="prev" class="page-nav__link page-nav__link--prev" href="../introduction/">
                     <i class="fa fa-chevron-left"></i> Previous
                 </a>
             
@@ -342,6 +334,10 @@ the <code>callable</code>.</p>
 
         
         <li class="page-nav__item">
+            
+                <a rel="next" class="page-nav__link page-nav__link--next" href="../parameter-lazy-loading/">
+                    Next <i class="fa fa-chevron-right"></i>
+                </a>
             
         </li>
     </ul>
@@ -396,12 +392,54 @@ the <code>callable</code>.</p>
                     
                     
                         
+                            <li class="subnavigation__list-item ">
+                                <a href="../introduction/" class="subnavigation__link">Introduction</a>
+                            </li>
+                        
+                    
+                
+            
+
+                
+                
+
+                    
+                    
+                        
                             <li class="subnavigation__list-item subnavigation__list-item--active">
                                 <a href="./" class="subnavigation__link">Basic Usage</a>
                             </li>
                         
                     
                 
+            
+
+                
+                
+
+                    
+                    
+                        
+                            <li class="subnavigation__list-item ">
+                                <a href="../parameter-lazy-loading/" class="subnavigation__link">Parameter Lazy Loading</a>
+                            </li>
+                        
+                    
+                
+            
+        </ul>
+    </div>
+
+                    
+    <div class="subnavigation hidden-print">
+        <h4 class="subnavigation__title">Related Components</h4>
+        <ul class="subnavigation__list">
+            
+                <li class="subnavigation__list-item">
+                    
+                        <a href="https://docs.laminas.dev/laminas-config-aggregator/" class="subnavigation__link">laminas-config-aggregator</a>
+                    
+                </li>
             
         </ul>
     </div>
@@ -478,7 +516,7 @@ the <code>callable</code>.</p>
                         <p>
                             <!--Built with love by the Laminas team with the help of our
                             <a href="https://github.com/laminas/laminas-config-aggregator-parameters/graphs/contributors">contributors</a>.<br>-->
-                            &copy; 2020 <a href="https://getlaminas.org/">Laminas Project</a> a Series of LF Projects, LLC.
+                            &copy; 2021 <a href="https://getlaminas.org/">Laminas Project</a> a Series of LF Projects, LLC.
                         </p>
                     </div>
                 </div>
