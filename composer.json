@@ -27,7 +27,9 @@
         "dms/phpunit-arraysubset-asserts": "^0.2.1",
         "laminas/laminas-coding-standard": "~1.0.0",
         "laminas/laminas-config": "^3.1",
-        "phpunit/phpunit": "^9.5"
+        "phpunit/phpunit": "^9.5",
+        "psalm/plugin-phpunit": "^0.15.1",
+        "vimeo/psalm": "^4.7"
     },
     "autoload": {
         "psr-4": {
@@ -46,6 +48,7 @@
         ],
         "cs-check": "phpcs",
         "cs-fix": "phpcbf",
+        "static-analysis": "psalm --shepherd --stats",
         "test": "phpunit --colors=always",
         "test-coverage": "phpunit --colors=always --coverage-clover clover.xml"
     },
