@@ -3,8 +3,14 @@ docs_dir: docs/book
 site_dir: docs/html
 nav:
     - Home: index.md
+    - Introduction: introduction.md
     - Basic Usage: usage.md
+    - Parameter Lazy Loading: parameter-lazy-loading.md
 site_description: 'PostProcessor extension for laminas/laminas-config-aggregator to allow usage of templated parameters within your configuration'
 repo_url: 'https://github.com/laminas/laminas-config-aggregator-parameters'
 extra:
     project: Components
+    related_documentations:
+        headline: Related Components
+        links:
+            - laminas-config-aggregator: https://docs.laminas.dev/laminas-config-aggregator/
