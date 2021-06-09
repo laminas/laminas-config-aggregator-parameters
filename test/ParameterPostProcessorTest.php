@@ -13,6 +13,16 @@ class ParameterPostProcessorTest extends TestCase
 {
     use ArraySubsetAsserts;
 
+    /**
+     * @psalm-return array<
+     *     non-empty-string,
+     *     array{
+     *      0: array<string,mixed>,
+     *      1: array<string,mixed>,
+     *      2: array<string,mixed>
+     *     }
+     * >
+     */
     public function parameterProvider(): array
     {
         return [
@@ -57,23 +67,26 @@ class ParameterPostProcessorTest extends TestCase
 
     /**
      * @dataProvider parameterProvider
+     * @param array<string,mixed> $parameters
+     * @param array<string,mixed> $configuration
+     * @param array<string,mixed> $expected
      */
-    public function testCanApplyParameters(array $parameters, array $configuration, array $expected)
+    public function testCanApplyParameters(array $parameters, array $configuration, array $expected): void
     {
         $processor = new ParameterPostProcessor($parameters);
         $processed = $processor($configuration);
 
-        $this->assertArraySubset($expected, $processed);
+        self::assertArraySubset($expected, $processed);
     }
 
-    public function testCanDetectMissingParameter()
+    public function testCanDetectMissingParameter(): void
     {
         $processor = new ParameterPostProcessor([]);
         $this->expectException(ParameterNotFoundException::class);
         $processor(['foo' => '%foo%']);
     }
 
-    public function testResolvesParameterizedParameters()
+    public function testResolvesParameterizedParameters(): void
     {
         $processor = new ParameterPostProcessor([
             'foo'    => 'bar',
@@ -97,7 +110,7 @@ class ParameterPostProcessorTest extends TestCase
         ], $processed);
     }
 
-    public function testResolvesParameterizedParametersInReversedOrder()
+    public function testResolvesParameterizedParametersInReversedOrder(): void
     {
         $processor = new ParameterPostProcessor([
             'foo' => '%bar%',
