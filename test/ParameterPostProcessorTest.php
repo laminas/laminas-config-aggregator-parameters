@@ -178,10 +178,12 @@ class ParameterPostProcessorTest extends TestCase
             ]
         ))([]);
 
-        $processedParameters       = $processed['parameters'];
+        $processedParameters = $processed['parameters'];
+        /** @var array<string,mixed> $processedNestedParameters */
         $processedNestedParameters = $processedParameters['nested'];
         unset($processedParameters['nested']);
 
+        /** @psalm-suppress MixedAssignment */
         foreach ($processedNestedParameters as $parameter => $parameterValue) {
             $originalValue = $parameters[$parameter];
             self::assertEquals($originalValue, $parameterValue);
