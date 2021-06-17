@@ -126,4 +126,65 @@ class ParameterPostProcessorTest extends TestCase
             ],
         ], $processed);
     }
+
+    public function testProcessedConfigContainsParameterTypesafety(): void
+    {
+        $parameters = [
+            'bool'   => true,
+            'string' => 'lorem ipsum',
+            'array'  => ['foo' => 'bar'],
+            'int'    => 123,
+            'float'  => 1.01,
+        ];
+
+        $processor = new ParameterPostProcessor($parameters);
+        $processed = $processor([
+            'bool'   => '%bool%',
+            'string' => '%string%',
+            'array'  => '%array%',
+            'int'    => '%int%',
+            'float'  => '%float%',
+        ]);
+
+        unset($processed['parameters']);
+        self::assertEquals([
+            'bool'   => true,
+            'string' => 'lorem ipsum',
+            'array'  => ['foo' => 'bar'],
+            'int'    => 123,
+            'float'  => 1.01,
+        ], $processed);
+    }
+
+    public function testResolvedParametersApplyTypesafety(): void
+    {
+        $parameters = [
+            'bool'   => true,
+            'string' => 'lorem ipsum',
+            'array'  => ['foo' => 'bar'],
+            'int'    => 123,
+            'float'  => 1.01,
+        ];
+
+        $processed = (new ParameterPostProcessor(
+            $parameters + [
+                'nested' => [
+                    'bool'   => '%bool%',
+                    'string' => '%string%',
+                    'array'  => '%array%',
+                    'int'    => '%int%',
+                    'float'  => '%float%',
+                ],
+            ]
+        ))([]);
+
+        $processedParameters       = $processed['parameters'];
+        $processedNestedParameters = $processedParameters['nested'];
+        unset($processedParameters['nested']);
+
+        foreach ($processedNestedParameters as $parameter => $parameterValue) {
+            $originalValue = $parameters[$parameter];
+            self::assertEquals($originalValue, $parameterValue);
+        }
+    }
 }
