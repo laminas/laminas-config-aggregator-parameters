@@ -4,13 +4,21 @@ declare(strict_types=1);
 
 namespace Laminas\ConfigAggregatorParameters;
 
+/**
+ * @template TParameters of array<string,mixed>
+ * @psalm-import-type ProcessedConfig from ParameterPostProcessor
+ */
 final class LazyParameterPostProcessor
 {
-    /** @var callable */
+    /**
+     * @var callable():array<string,mixed>
+     * @psalm-var callable():TParameters
+     */
     private $parameterProvider;
 
     /**
-     * @psalm-param callable():array<string,mixed> $parameterProvider
+     * @param callable():array<string,mixed> $parameterProvider
+     * @psalm-param callable():TParameters $parameterProvider
      */
     public function __construct(callable $parameterProvider)
     {
@@ -20,6 +28,7 @@ final class LazyParameterPostProcessor
     /**
      * @param array<string,mixed> $config
      * @return array<string,mixed>
+     * @psalm-return ProcessedConfig
      */
     public function __invoke(array $config): array
     {
