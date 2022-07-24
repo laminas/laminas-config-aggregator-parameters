@@ -16,7 +16,6 @@ final class LazyParameterPostProcessorTest extends TestCase
             throw new RuntimeException('Parameter provider must not be called during instantiation!');
         };
 
-        /** @psalm-suppress MixedArgumentTypeCoercion */
         new LazyParameterPostProcessor($callable);
 
         self::assertTrue(true);
