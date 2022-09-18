@@ -12,8 +12,7 @@ use function sprintf;
 
 class ParameterNotFoundException extends InvalidArgumentException
 {
-    /** @var string */
-    private $key;
+    private string $key;
 
     public function __construct(string $message = "", int $code = 0, ?Throwable $previous = null, string $key = '')
     {

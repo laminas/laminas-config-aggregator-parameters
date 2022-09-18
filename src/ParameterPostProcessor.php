@@ -21,7 +21,7 @@ class ParameterPostProcessor
      * @var array<string,mixed>
      * @psalm-var TParameters
      */
-    private $parameters;
+    private array $parameters;
 
     /**
      * @param array<string,mixed> $parameters
@@ -44,7 +44,7 @@ class ParameterPostProcessor
             $parameters = $this->getResolvedParameters();
 
             /** @psalm-suppress MissingClosureParamType */
-            array_walk_recursive($config, static function (&$value) use ($parameters) {
+            array_walk_recursive($config, static function (&$value) use ($parameters): void {
                 /** @psalm-suppress MixedAssignment */
                 $value = $parameters->unescapeValue($parameters->resolveValue($value));
             });
