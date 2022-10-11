@@ -18,18 +18,12 @@ use function is_numeric;
 class ParameterPostProcessor
 {
     /**
-     * @var array<string,mixed>
-     * @psalm-var TParameters
-     */
-    private array $parameters;
-
-    /**
      * @param array<string,mixed> $parameters
      * @psalm-param TParameters $parameters
      */
-    public function __construct(array $parameters)
-    {
-        $this->parameters = $parameters;
+    public function __construct(
+        private array $parameters
+    ) {
     }
 
     /**
