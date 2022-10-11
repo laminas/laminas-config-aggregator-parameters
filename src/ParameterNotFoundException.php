@@ -12,12 +12,13 @@ use function sprintf;
 
 class ParameterNotFoundException extends InvalidArgumentException
 {
-    private string $key;
-
-    public function __construct(string $message = "", int $code = 0, ?Throwable $previous = null, string $key = '')
-    {
+    public function __construct(
+        string $message = "",
+        int $code = 0,
+        ?Throwable $previous = null,
+        private string $key = ''
+    ) {
         parent::__construct($message, $code, $previous);
-        $this->key = $key;
     }
 
     public static function fromException(BaseException $e): self
