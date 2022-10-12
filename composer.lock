@@ -57,16 +57,16 @@
         },
         {
             "name": "laminas/laminas-config-aggregator",
-            "version": "1.10.0",
+            "version": "1.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-config-aggregator.git",
-                "reference": "5e27afb392ea7273457d896c8326eeb68307db2a"
+                "reference": "847394b3435081e93464341261446e453051d1af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-config-aggregator/zipball/5e27afb392ea7273457d896c8326eeb68307db2a",
-                "reference": "5e27afb392ea7273457d896c8326eeb68307db2a",
+                "url": "https://api.github.com/repos/laminas/laminas-config-aggregator/zipball/847394b3435081e93464341261446e453051d1af",
+                "reference": "847394b3435081e93464341261446e453051d1af",
                 "shasum": ""
             },
             "require": {
@@ -122,7 +122,7 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2022-10-11T22:11:03+00:00"
+            "time": "2022-10-11T23:40:37+00:00"
         },
         {
             "name": "laminas/laminas-stdlib",
