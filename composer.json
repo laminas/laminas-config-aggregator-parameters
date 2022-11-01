@@ -33,7 +33,7 @@
         "laminas/laminas-coding-standard": "~2.4",
         "laminas/laminas-config": "^3.8.0",
         "phpunit/phpunit": "^9.5.26",
-        "psalm/plugin-phpunit": "^0.17.0",
+        "psalm/plugin-phpunit": "^0.18.0",
         "vimeo/psalm": "^4.29"
     },
     "autoload": {
