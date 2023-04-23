@@ -29,10 +29,9 @@
         "symfony/dependency-injection": "^5.4 || ^6.2.8"
     },
     "require-dev": {
-        "dms/phpunit-arraysubset-asserts": "^0.4.0",
         "laminas/laminas-coding-standard": "^2.5",
         "laminas/laminas-config": "^3.8.0",
-        "phpunit/phpunit": "^9.6.7",
+        "phpunit/phpunit": "^10.1.2",
         "psalm/plugin-phpunit": "^0.18.4",
         "vimeo/psalm": "^5.9"
     },

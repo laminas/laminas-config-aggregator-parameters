@@ -4,15 +4,13 @@ declare(strict_types=1);
 
 namespace LaminasTest\ConfigAggregatorParameters;
 
-use DMS\PHPUnitExtensions\ArraySubset\ArraySubsetAsserts;
 use Laminas\ConfigAggregatorParameters\ParameterNotFoundException;
 use Laminas\ConfigAggregatorParameters\ParameterPostProcessor;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 class ParameterPostProcessorTest extends TestCase
 {
-    use ArraySubsetAsserts;
-
     /**
      * @psalm-return array<
      *     non-empty-string,
@@ -23,7 +21,7 @@ class ParameterPostProcessorTest extends TestCase
      *     }
      * >
      */
-    public function parameterProvider(): array
+    public static function parameterProvider(): array
     {
         return [
             'root-scoped-parameter' => [
@@ -66,17 +64,20 @@ class ParameterPostProcessorTest extends TestCase
     }
 
     /**
-     * @dataProvider parameterProvider
      * @param array<string,mixed> $parameters
      * @param array<string,mixed> $configuration
      * @param array<string,mixed> $expected
      */
+    #[DataProvider('parameterProvider')]
     public function testCanApplyParameters(array $parameters, array $configuration, array $expected): void
     {
         $processor = new ParameterPostProcessor($parameters);
         $processed = $processor($configuration);
 
-        self::assertArraySubset($expected, $processed);
+        self::assertArrayHasKey('parameters', $processed);
+        unset($processed['parameters']);
+
+        self::assertEquals($expected, $processed);
     }
 
     public function testCanDetectMissingParameter(): void
@@ -100,10 +101,16 @@ class ParameterPostProcessorTest extends TestCase
 
         $processed = $processor(['foo' => '%nested.bar%']);
 
-        $this->assertArraySubset([
+        self::assertEquals([
             'foo'        => 'baz',
             'parameters' => [
-                'nested' => [
+                'foo'        => 'bar',
+                'bar'        => 'baz',
+                'baz'        => 'bar',
+                'nested.foo' => 'baz',
+                'nested.bar' => 'baz',
+                'nested'     => [
+                    'foo' => 'baz',
                     'bar' => 'baz',
                 ],
             ],
@@ -120,9 +127,11 @@ class ParameterPostProcessorTest extends TestCase
 
         $processed = $processor([]);
 
-        $this->assertArraySubset([
+        self::assertEquals([
             'parameters' => [
                 'foo' => 'qux',
+                'bar' => 'qux',
+                'baz' => 'qux',
             ],
         ], $processed);
     }
