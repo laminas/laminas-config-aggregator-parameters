@@ -20,6 +20,7 @@ class ParameterPostProcessorTest extends TestCase
      *      2: array<string,mixed>
      *     }
      * >
+     * @psalm-suppress PossiblyUnusedMethod
      */
     public static function parameterProvider(): array
     {
