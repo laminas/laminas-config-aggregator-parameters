@@ -37,9 +37,8 @@ class ParameterPostProcessor
         try {
             $parameters = $this->getResolvedParameters();
 
-            /** @psalm-suppress MissingClosureParamType */
-            array_walk_recursive($config, static function (&$value) use ($parameters): void {
-                /** @psalm-suppress MixedAssignment */
+            array_walk_recursive($config, static function (mixed &$value) use ($parameters): void {
+                /** @psalm-suppress MixedAssignment, MixedArgument */
                 $value = $parameters->unescapeValue($parameters->resolveValue($value));
             });
         } catch (SymfonyParameterNotFoundException $exception) {
