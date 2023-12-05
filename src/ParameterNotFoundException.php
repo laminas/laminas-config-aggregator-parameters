@@ -23,7 +23,7 @@ class ParameterNotFoundException extends InvalidArgumentException
 
     public static function fromException(BaseException $e): self
     {
-        $key = (string) $e->getKey();
+        $key = $e->getKey();
         return new self(sprintf(
             'Found key "%s" within configuration, but it has no associated parameter defined',
             $key
