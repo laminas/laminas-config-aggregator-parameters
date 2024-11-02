@@ -16,7 +16,7 @@ class ParameterNotFoundException extends InvalidArgumentException
         string $message = "",
         int $code = 0,
         ?Throwable $previous = null,
-        private string $key = ''
+        private readonly string $key = ''
     ) {
         parent::__construct($message, $code, $previous);
     }

@@ -22,7 +22,7 @@ class ParameterPostProcessor
      * @psalm-param TParameters $parameters
      */
     public function __construct(
-        private array $parameters
+        private readonly array $parameters
     ) {
     }
 
