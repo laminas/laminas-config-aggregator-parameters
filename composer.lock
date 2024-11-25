@@ -1557,6 +1557,7 @@
                     "type": "community_bridge"
                 }
             ],
+            "abandoned": true,
             "time": "2024-11-17T22:10:53+00:00"
         },
         {
