@@ -9,7 +9,7 @@ use Laminas\ConfigAggregatorParameters\ParameterPostProcessor;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
-class ParameterPostProcessorTest extends TestCase
+final class ParameterPostProcessorTest extends TestCase
 {
     /**
      * @psalm-return array<
@@ -20,7 +20,6 @@ class ParameterPostProcessorTest extends TestCase
      *      2: array<string,mixed>
      *     }
      * >
-     * @psalm-suppress PossiblyUnusedMethod
      */
     public static function parameterProvider(): array
     {

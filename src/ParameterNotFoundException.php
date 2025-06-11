@@ -10,6 +10,9 @@ use Throwable;
 
 use function sprintf;
 
+/**
+ * @psalm-suppress ClassMustBeFinal
+ */
 class ParameterNotFoundException extends InvalidArgumentException
 {
     public function __construct(

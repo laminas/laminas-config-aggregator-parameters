@@ -7,7 +7,7 @@ namespace LaminasTest\ConfigAggregatorParameters;
 use Laminas\ConfigAggregatorParameters\ParameterNotFoundException;
 use PHPUnit\Framework\TestCase;
 
-class ParameterNotFoundExceptionTest extends TestCase
+final class ParameterNotFoundExceptionTest extends TestCase
 {
     public function testThatTheKeyCanBeRetrieved(): void
     {
