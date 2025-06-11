@@ -10,6 +10,9 @@ use Throwable;
 
 use function sprintf;
 
+/**
+ * @final
+ */
 class ParameterNotFoundException extends InvalidArgumentException
 {
     public function __construct(
