@@ -11,7 +11,7 @@ use Throwable;
 use function sprintf;
 
 /**
- * @psalm-suppress ClassMustBeFinal
+ * @final
  */
 class ParameterNotFoundException extends InvalidArgumentException
 {

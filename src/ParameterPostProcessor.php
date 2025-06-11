@@ -14,7 +14,7 @@ use function is_numeric;
 /**
  * @template TParameters of array<string,mixed>
  * @psalm-type ProcessedConfig=array<string,mixed>&array{parameters:array<string,mixed>}
- * @psalm-suppress ClassMustBeFinal
+ * @final
  */
 class ParameterPostProcessor
 {
