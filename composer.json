@@ -25,7 +25,7 @@
         "php": "~8.3.0 || ~8.4.0 || ~8.5.0 || ~8.6.0",
         "laminas/laminas-config-aggregator": "^1.13",
         "laminas/laminas-stdlib": "^3.17",
-        "symfony/dependency-injection": "^6.2.8 || ^7.0"
+        "symfony/dependency-injection": "^6.2.8 || ^7.0 || ^8.0"
     },
     "require-dev": {
         "laminas/internal-tooling": "^1.3",
